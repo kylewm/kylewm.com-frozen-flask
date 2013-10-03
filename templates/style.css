@@ -1,0 +1,102 @@
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text);
+
+body {
+    font-family: 'Georgia', serif; font-size: 16px; color: #222;
+}
+
+a {
+    color: #0066aa; text-decoration: none; 
+}
+
+a:visited {
+    color: #004499; text-decoration: none; 
+}
+
+a:hover {
+    color: #dd0000; text-decoration: none; 
+}
+
+h1, h2, h3 {
+    font-family: 'Crimson Text', 'Georgia', serif; font-weight: normal; 
+}
+
+h1 {
+    font-size: 55px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.header h1 {
+    padding-top: 60px; padding-bottom: 0px; 
+}
+
+.header a {
+    color: #000;
+}
+
+textarea, code, pre {
+    font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace!important;
+    font-size: 0.8em;
+}
+
+pre {
+    padding: 7px 30px; margin: 15px -30px; line-height: 1.3; 
+}
+
+.highlight {
+    padding: 0px 10px 0px 10px;
+}
+
+/* Bullets are turned off by skeleton by default */
+.content ul {
+    margin-left: 30px;
+    list-style: square outside;
+}
+
+ul.article-list {
+    margin-left: 0;
+    list-style: none;
+}
+
+ul.article-list li:before {
+    content: "\00BB \0020"; color: #888; position: absolute; margin-left: -19px; margin-top: 10px; 
+}
+
+blockquote {
+    margin: 15px 0; font-style: italic; color: #444; 
+}
+
+.footer {
+    font-size: 13px; color: #888; text-align: right; margin-top: 25px; 
+}
+
+.article-abstract {
+    margin-top: 10px;
+}
+
+.article-date {
+    font-size: 0.7em; color: #444; text-transform: uppercase; 
+}
+
+.article-tags {
+    font-size: 0.7em; color: #444; text-transform: uppercase; float: right;
+}
+
+.article-title a {
+}
+
+.nav .active:before {
+    content: "["
+}
+
+.nav .active:after {
+    content: "]"
+}
+
+{{ pygments }}

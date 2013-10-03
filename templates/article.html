@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>{{ page.title }}</h2>
+<span class="article-date">
+  {{ page.date() | strftime }}
+</span>
+
+<span class="article-tags">
+  {% for tag in page.tags %}
+    {{ tag }}
+  {% endfor %}
+</span>
+
+<p class="article-body">
+  {{ page.html() | safe }}
+</p>
+
+{% endblock content %}
+

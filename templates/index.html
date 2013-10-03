@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul class="article-list">
+  {% for page in pages %}
+  <li>
+    <div class="article-title"><a href="{{ page.url() }}">{{ page.title }}</a></div>
+    <span class="article-date">{{ page.date() | strftime }}</span>
+    <span class="article-tags">{% for tag in page.tags %}{{ tag }} {% endfor %}</span>
+    <p class="article-abstract"> {{ page.abstract }} </p>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}
+
