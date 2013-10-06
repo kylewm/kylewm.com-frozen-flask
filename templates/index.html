@@ -2,16 +2,22 @@
 
 {% block content %}
 
-<ul class="article-list">
   {% for page in pages %}
-  <li>
-    <div class="article-title"><a href="{{ page.url() }}">{{ page.title }}</a></div>
-    <span class="article-date">{{ page.date() | strftime }}</span>
-    <span class="article-tags">{% for tag in page.tags %}{{ tag }} {% endfor %}</span>
-    <p class="article-abstract"> {{ page.abstract }} </p>
-  </li>
+  <article>
+    <header>
+      <h2><a href="{{ page.url() }}">{{ page.title }}</a></h2>
+    </header>
+    <section>
+      <p class="article-abstract"> {{ page.abstract }} </p>
+    </section>
+  </article>
+  <aside>
+    {{ page.date() | strftime }}<br/>
+    {% for tag in page.tags %}{{ tag }} {% endfor %}<br/>
+    in: {{ page.category }}
+    
+  </aside>
   {% endfor %}
-</ul>
 
 {% endblock content %}
 

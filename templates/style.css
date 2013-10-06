@@ -53,8 +53,16 @@ pre {
     padding: 0px 10px 0px 10px;
 }
 
+.sidebar {
+    background-image: url({{ url_for('static', filename='img/bookshop.jpg') }});
+    background-position: -1100px 0px;
+    /*background-size: 1200px auto;*/
+    min-height: 800px;
+    
+}
+
 /* Bullets are turned off by skeleton by default */
-.content ul {
+.container ul {
     margin-left: 30px;
     list-style: square outside;
 }
