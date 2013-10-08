@@ -114,9 +114,16 @@ def style_css():
     css = render_template('style.css', pygments=pygments_css)
     return app.response_class(css, mimetype='text/css')
 
+@app.route("/css/pygments.css")
+def pygments():
+    import pygments.formatters
+    formatter = pygments.formatters.HtmlFormatter(style=PYGMENTS_STYLE)
+    pygments_css = formatter.get_style_defs('.codehilite')
+    return app.response_class(pygments_css, mimetype='text/css')
+
 @app.template_filter('strftime')
-def _jinja2_filter_datetime(date, fmt=None):
-    return date.strftime('%b %d, %Y') 
+def _jinja2_filter_strftime(date, fmt=None):
+    return date.strftime(fmt or '%Y %b %d') 
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True)

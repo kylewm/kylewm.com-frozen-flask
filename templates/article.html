@@ -2,20 +2,23 @@
 
 {% block content %}
 
-<h2>{{ page.title }}</h2>
-<span class="article-date">
-  {{ page.date() | strftime }}
-</span>
+<div class="datebox" style="">
+  <span class="day">
+    {{ page.date() | strftime('%d') }}
+  </span>
+  <span class="month-year">
+    {{ page.date() | strftime('%b %Y') }}
+  </span>
+</div>
 
-<span class="article-tags">
-  {% for tag in page.tags %}
-    {{ tag }}
-  {% endfor %}
-</span>
-
-<p class="article-body">
-  {{ page.html() | safe }}
-</p>
+<article>
+  <header>
+    <h2>{{ page.title }}</h2>
+  </header>
+  <section>
+    {{ page.html() | safe }}
+  </section>
+</article>
 
 {% endblock content %}
 

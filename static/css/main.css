@@ -60,8 +60,17 @@ textarea {
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
 
+h1,h2,h3,h4,h5 {
+    font-family: 'Molengo', sans-serif;
+}
+
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font-size: 1.1em;
+    font-family: 'Crimson Text', serif;
+}
+
+code, .codehilite {
+    font-size: 0.8em;
 }
 
 .wrapper {
@@ -74,18 +83,18 @@ body {
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #e44d26;
+    border-bottom: 20px solid #4d26e4;
 }
 
 .footer-container,
 .main aside {
-    border-top: 20px solid #e44d26;
+    border-top: 20px solid #4d26e4;
 }
 
 .header-container,
 .footer-container,
 .main aside {
-    background: #f16529;
+    background: #6529f1;
 }
 
 .title {
@@ -111,7 +120,7 @@ nav a {
     font-weight: bold;
 
     color: white;
-    background: #e44d26;
+    background: #4d26e4;
 }
 
 nav a:hover,
@@ -143,6 +152,14 @@ nav a:hover {
 .footer-container footer {
     color: white;
     padding: 20px 0;
+}
+
+.dateline  {
+    display: block;
+}
+
+.datebox { 
+    display: none;
 }
 
 /* ===============
@@ -249,6 +266,26 @@ nav a:hover {
         float: right;
         width: 28%;
     }
+
+    .dateline {
+        display: none;
+    }
+
+    .datebox {
+        font-family: 'Molengo';
+        float: left;
+        clear: both;
+        text-align: right;
+        margin: 14px 20px 0px 0px;
+        line-height: 1.2;
+        display: block;
+    }
+
+    .datebox .day {
+        font-size: 48px;
+        display: block;
+    }
+
 }
 
 @media only screen and (min-width: 1140px) {
