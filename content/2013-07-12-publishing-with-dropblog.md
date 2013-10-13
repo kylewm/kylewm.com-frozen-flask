@@ -1,8 +1,8 @@
 ---
 category = "Programming"
 layout = "post"
-title = "Cobbling together a blog engine with Pelican and Dropbox"
-abstract = "A description of how this blog is automatically generated and updated from plain text files in a Dropbox (or Git repository)."
+title = "Building a blog with Pelican and Dropbox"
+abstract = "A description of how this blog was (briefly) automatically generated and updated from plain text files in a Dropbox."
 tags = [ "python", "pelican", "blog",]
 date = 2013-07-12T00:00:00Z
 ---

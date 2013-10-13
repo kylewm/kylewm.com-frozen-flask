@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for page in pages %}
+
+
+<div class="section group">
+  <div class="sidebar col span_1_of_5">
+    <div class="date">
+      {{ page.date() | strftime('%Y %b %d') }}
+    </div>
+    <div class="tags">
+      {{ page.tags | join("<br>") | safe }}
+    </div>
+  </div>
+  <div class="col span_4_of_5">
+    <article>
+      <header>
+        <h2><a href="{{ page.url() }}">{{ page.title }}</a></h2>
+      </header>
+      <section>
+        {{ page.abstract }}
+      </section>
+    </article>
+  </div>
+</div>
+
+
+{% endfor %}
+
+{% endblock content %}
+

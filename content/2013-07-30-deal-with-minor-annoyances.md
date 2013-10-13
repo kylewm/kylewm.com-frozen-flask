@@ -2,14 +2,11 @@
 category = "Programming"
 layout = "post"
 tags = [ "java", "swing", "documentation",]
-abstract = "Don't keep writing the same code (or referring to the same documentation) over and over. It will drive you crazy."
-title = "Minor annoyances are really satisfying to fix"
+abstract = "What to do when you can't bear the thought of writing the same GUI code for the nine thousandth time"
+title = "Represent common Swing behaviors as UIConditions"
 date = 2013-07-30T00:00:00Z
 slug = "deal-with-minor-annoyances"
 ---
-
-
-## Abstraction ##
 
 I still do a lot of work with Java Swing (am I the only one?). When
 reviewing my own or someone else's additions, it's pretty easy to tell
@@ -144,7 +141,7 @@ ListSelectionListener and more importantly maintainers don't have to
 dig through a pile of boilerplate to find the meaningful code. Huzzah!
 
 
-## Documentation ##
+**Documentation**
 
 This is tangentially related, but whenever you find yourself checking
 documentation for the [same thing over and over and over again](http://thecodelesscode.com/case/104), consider:

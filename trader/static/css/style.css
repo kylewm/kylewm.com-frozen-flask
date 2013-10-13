@@ -1,0 +1,94 @@
+
+/* =========================== global reset ============================ */
+
+body {
+    /*font-family: "Crimson Text", serif;*/
+    font-family: "Helvetica", "Helvetica Neue", "Arial", sans-serif;
+    font-size: small;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+a:link {
+    color: #4477dd;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #2266cc;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #dd7744;
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Poiret One", sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.1em;
+    font-weight: italic;
+}
+
+.page-head {
+    text-align: right;
+}
+
+.sidebar {
+    padding-top: 5px;
+    text-align: right;
+}
+
+nav {
+    margin-top: 10px
+}
+
+nav li {
+    display: inline-block;
+    border-top: 1px #000 solid;
+    width: 50px;
+    padding: 2px;
+    text-align: center;
+}
+
+nav li + li {
+     margin-left: 15px;
+}
+
+footer {
+    color: #777;
+    text-align: center;
+    font-size: small;
+}
+
+footer a:visited, footer a:link, footer a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 480px) {
+    .wrapper {
+        width: 93%;
+    }
+}
