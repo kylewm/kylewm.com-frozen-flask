@@ -16,23 +16,23 @@ The raytracer itself only handles spheres but supports different types
 of materials with reflection, refraction, and supersampling. Here is
 probably my favorite render, with the progression in more detail below.
 
-![raytrace5](raytrace5.png)
+![raytrace5](resource:raytrace5.png)
 
 <!--more-->
 
 Mostly I just think this is funny. Ray intersection with two 3D objects
 is a really inefficient way to draw two filled circles.
 
-![raytrace1](raytrace1.png)
+![raytrace1](resource:raytrace1.png)
 
 After I figured out that normals point AWAY from the center of the
 sphere, suddenly there was diffuse shading!
 
-![raytrace2](raytrace2.png)
+![raytrace2](resource:raytrace2.png)
 
 And then subtle specular highlights:
 
-![raytrace3](raytrace3.png)
+![raytrace3](resource:raytrace3.png)
 
 A little less subtle. The problem with the color of the shadow is more
 pronounced here but I think is visible on the previous three renders. I
@@ -40,17 +40,17 @@ think what was going on there was that the shadow ray was intersecting
 the object itself -- adding a small epsilon value before the next
 version fixed it.
 
-![raytrace4](raytrace4.png)
+![raytrace4](resource:raytrace4.png)
 
 Here they are with reflection (and supersampling, which was almost no
 additional code at all but made a huge difference in the quality of the
 images, especially smoothing out the shadows)
 
-![raytrace5](raytrace5.png)
+![raytrace5](resource:raytrace5.png)
 
 And finally refraction!
 
-![raytrace6](raytrace6.png)
+![raytrace6](resource:raytrace6.png)
 
 At this point I sort of ran out of steam, but it was a super fun
 project, and I was happy with it as a proof-of-concept. I was impressed

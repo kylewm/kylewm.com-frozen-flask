@@ -1,4 +1,5 @@
 import io, os, itertools, re
+import urllib
 from page import Page
 from flask import Flask, render_template, url_for, abort, send_from_directory
 
@@ -27,7 +28,6 @@ def article_resource(year, month, day, slug, resource):
         return send_from_directory(page.resourcepath, resource)
     abort(404)
 
-
 @app.route("/")
 def index():
     pages = sorted(Page.all(), key=Page.date, reverse=True)
@@ -42,4 +42,4 @@ def pygments_css():
 
 @app.template_filter('strftime')
 def _jinja2_filter_strftime(date, fmt='%Y %b %d'):
-    return date.strftime(fmt) 
+    return date.strftime(fmt)

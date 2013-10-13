@@ -1,7 +1,7 @@
-
+#!/usr/bin/env python
 
 from flask_frozen import Freezer
-from builder import app
+from trader import app
 
 freezer = Freezer(app)
 

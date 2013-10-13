@@ -9,6 +9,7 @@ class Page():
     md = markdown.Markdown(['codehilite'])
     page_regex = re.compile(r'---(?P<head>.*?)---(?P<body>.*)', re.DOTALL | re.MULTILINE)
     file_regex = re.compile(r'(?P<year>\d{4})-(?P<month>\d{2})-(?P<day>\d{2})-(?P<slug>.*)')
+    resource_regex = re.compile(r'resource:(?P<name>[a-zA-Z0-9\-_.%]*)')
     
     @classmethod
     def load(cls, filename, resourcepath):
@@ -51,7 +52,17 @@ class Page():
         return self._meta
 
     def html(self):
-        return self.md.convert(self.body)
+        date = self.date()
+
+        def repl(matcher):
+            return url_for('article_resource', year=date.year,
+                           month=date.month, day=date.day,
+                           slug=self.slug(), resource=matcher.group('name'))
+        
+        processed = self.resource_regex.sub(repl, self.body)
+            
+            
+        return self.md.convert(processed)
 
     def _filename_base(self):
         path, name = os.path.split(self.filename)
