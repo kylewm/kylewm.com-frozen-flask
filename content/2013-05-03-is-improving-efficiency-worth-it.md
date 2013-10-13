@@ -1,7 +1,7 @@
 ---
 category = "Programming"
 layout = "post"
-title = "On procrastination as work"
+title = "Is automating common tasks a waste of time?"
 abstract = "Is it worthwhile to spend hours tinkering with a build process, when you can really only hope to save yourself a few minutes a week? (I think so)"
 tags = [ "automation", "xkcd",]
 date = 2013-05-03T00:00:00Z
