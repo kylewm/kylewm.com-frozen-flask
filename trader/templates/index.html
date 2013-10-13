@@ -8,10 +8,7 @@
 <div class="section group">
   <div class="sidebar col span_1_of_5">
     <div class="date">
-      {{ page.date() | strftime('%Y %b %d') }}
-    </div>
-    <div class="tags">
-      {{ page.tags | join("<br>") | safe }}
+      {{ page.date() | strftime('%Y %B %d') }}
     </div>
   </div>
   <div class="col span_4_of_5">
@@ -19,9 +16,9 @@
       <header>
         <h2><a href="{{ page.url() }}">{{ page.title }}</a></h2>
       </header>
-      <section>
+      <p>
         {{ page.abstract }}
-      </section>
+      </p>
     </article>
   </div>
 </div>

@@ -11,14 +11,15 @@ class Page():
     file_regex = re.compile(r'(?P<year>\d{4})-(?P<month>\d{2})-(?P<day>\d{2})-(?P<slug>.*)')
     
     @classmethod
-    def load(cls, filename):
+    def load(cls, filename, resourcepath):
         with io.open(filename, encoding='utf8') as fd:
             filetext = fd.read()
             match = cls.page_regex.match(filetext)
             if match:
                 head = match.group('head')
                 body = match.group('body')
-                return cls(filename, head, body)
+                resourcepath = os.path.abspath(resourcepath)
+                return cls(filename, resourcepath, head, body)
         
     @classmethod
     def all(cls):
@@ -27,17 +28,19 @@ class Page():
             for name in files:
                 basename, ext = os.path.splitext(name)
                 if ext == PAGE_EXTENSION:
-                    page = Page.load(os.path.join(root, name))
+                    page = Page.load(os.path.join(root, name), 
+                                     os.path.join(root, basename))
                     if page:
-                        pages.append(page)
+                        pages.append(page)            
         return pages
 
     @classmethod
     def find(cls, pred):
         return next((page for page in cls.all() if pred(page)), None)
 
-    def __init__(self, filename, head, body):
+    def __init__(self, filename, resourcepath, head, body):
         self.filename = filename
+        self.resourcepath = resourcepath
         self.head = head
         self.body = body
         self._meta = None
